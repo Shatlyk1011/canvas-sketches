@@ -69,9 +69,9 @@ const sketch = () => {
     // Draw user addresses
     regionAdresses.forEach(([lon, lat]) => {
       const [x, y] = project([lon, lat]);
-      context.fillStyle = "#green";
+      context.fillStyle = "green";
       context.beginPath();
-      context.arc(x, y, 5, 0, Math.PI * 2);
+      context.arc(x, y, 10, 0, Math.PI * 2);
       context.fill();
     });
 
@@ -84,7 +84,7 @@ const sketch = () => {
     const controlY = (from[1] + to[1]) / 2 - 100; // Height of the parabola
 
     // Draw the curve
-    context.strokeStyle = "blue";
+    context.strokeStyle = "gray";
     context.lineWidth = 3;
     context.beginPath();
     context.moveTo(from[0], from[1]);
@@ -96,7 +96,7 @@ const sketch = () => {
     const x = (1 - t) * (1 - t) * from[0] + 2 * (1 - t) * t * controlX + t * t * to[0];
     const y = (1 - t) * (1 - t) * from[1] + 2 * (1 - t) * t * controlY + t * t * to[1];
 
-    context.fillStyle = "green";
+    context.fillStyle = "orangered";
     context.beginPath();
     context.arc(x, y, 8, 0, Math.PI * 2); // Plane represented by a circle
     context.fill();
